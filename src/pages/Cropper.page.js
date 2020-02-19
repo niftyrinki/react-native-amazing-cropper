@@ -293,7 +293,7 @@ class CropperPage extends Component {
       left: this.state.LEFT_LIMIT + DIFF,
       bottom: this.state.BOTTOM_LIMIT - DIFF,
       right: this.state.RIGHT_LIMIT + DIFF,
-      resizeMode: 'stretch',
+      resizeMode: 'contain',
       transform: [
         { rotate: `${this.state.rotation.toString()}deg` },
       ],
@@ -593,7 +593,7 @@ class CropperPage extends Component {
     const cropData = {
       offset: { x, y },
       size: { width, height },
-      resizeMode: 'stretch'
+      resizeMode: 'contain'
     };
     RNImageRotate.rotateImage(
       this.props.imageUri,
